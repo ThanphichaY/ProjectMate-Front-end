@@ -40,3 +40,10 @@ export default {
   <component :is="currentView" />
   <Footer />
 </template>
+
+<style lang="scss">
+$primary: #150095;
+$secondary: #ffd912;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+</style>
