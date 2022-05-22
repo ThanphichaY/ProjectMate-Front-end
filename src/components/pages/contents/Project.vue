@@ -30,6 +30,7 @@ export default {
     </div>
   </div>
 
+  <!-- Project Modal -->
   <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -48,7 +49,11 @@ export default {
           <div class="container">
             <div class="row">
               <div class="col-lg-6 align-self-center">
-                <img :src="project.image" class="img-fluid" alt="image" />
+                <img
+                  :src="project.image"
+                  class="img-fluid rounded-4"
+                  alt="image"
+                />
               </div>
 
               <div class="col-lg-6">
@@ -72,22 +77,14 @@ export default {
                   <label class="col-form-label">บริษัท:</label>
                   <p>{{ project.company }}</p>
                 </div>
-                <div class="mb-3">
-                  <label class="col-form-label">Hashtags:</label>
-                  <p>{{ project.tags }}</p>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
+          <button type="button" class="btn btn-primary w-100 m-2">
+            ติดต่อ
           </button>
         </div>
       </div>

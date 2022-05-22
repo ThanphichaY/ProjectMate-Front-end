@@ -26,7 +26,6 @@ export default {
         int_pos: faker.lorem.sentence(),
         resume: faker.image.nature(640, 480, true),
         portfolio: faker.image.nature(640, 480, true),
-        tags: faker.lorem.sentence(),
       });
     }
   },

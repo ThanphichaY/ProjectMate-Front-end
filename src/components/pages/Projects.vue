@@ -27,7 +27,6 @@ export default {
         qualification: faker.lorem.lines(),
         positions: faker.lorem.sentence(),
         company: faker.company.companyName(),
-        tags: faker.lorem.sentence(),
       });
     }
   },
