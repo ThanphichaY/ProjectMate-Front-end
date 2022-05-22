@@ -1,25 +1,42 @@
+<script>
+export default {
+  props: ["colleague"],
+};
+</script>
+
 <template>
   <div class="colleague mx-2 text-center">
-    <svg
-      class="bd-placeholder-img rounded-circle"
-      width="100"
-      height="100"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Placeholder: 140x140"
-      preserveAspectRatio="xMidYMid slice"
-      focusable="false"
-    >
-      <title>Placeholder</title>
-      <rect width="100%" height="100%" fill="#777" />
-      <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-    </svg>
+    <img
+      :src="colleague.image"
+      class="colleague-img rounded-circle m-3"
+      alt="Cinque Terre"
+    />
 
-    <h2 class="fw-normal">Heading</h2>
-    <p>
-      Some representative placeholder content for the three columns of text
-      below the carousel. This is the first column.
-    </p>
-    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+    <div
+      class="colleague-detail d-flex align-items-center flex-column bd-highlight mb-3"
+    >
+      <h2 class="fw-normal">{{ colleague.name }}</h2>
+      <p class="overflow-auto">
+        {{ colleague.capability }}
+      </p>
+      <a class="btn btn-secondary mt-auto" href="#">View details &raquo;</a>
+    </div>
   </div>
 </template>
+
+<style lang="scss">
+.colleague {
+  height: 400px;
+  min-width: 300px;
+}
+
+.colleague-img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+.colleague-detail {
+  height: 240px;
+}
+</style>
