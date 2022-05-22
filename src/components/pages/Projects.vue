@@ -47,7 +47,11 @@ export default {
   </div>
 
   <div v-if="slide" class="container-fluid px-0 mb-4">
-    <div class="d-flex flex-row flex-nowrap overflow-auto px-md-5 pb-3">
+    <div
+      class="d-flex flex-row flex-nowrap overflow-scroll px-md-5 pb-3"
+      v-dragscroll
+      style="cursor: grab"
+    >
       <Project v-for="project in projects" :project="project" />
     </div>
   </div>
