@@ -18,7 +18,78 @@ export default {
         <p class="card-text overflow-auto">
           {{ project.description }}
         </p>
-        <a href="#" class="btn btn-primary mt-auto">More details</a>
+        <button
+          type="button"
+          class="btn btn-primary mt-auto"
+          data-bs-toggle="modal"
+          :data-bs-target="'#projectModal' + project.id"
+        >
+          More details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            {{ project.title }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 align-self-center">
+                <img :src="project.image" class="img-fluid" alt="image" />
+              </div>
+
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="col-form-label">รายละเอียดงาน:</label>
+                  <p>{{ project.description }}</p>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">คุณสมบัติผู้ร่วมงาน:</label>
+                  <p>{{ project.description }}</p>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">รายละเอียดงาน:</label>
+                  <p>{{ project.qualification }}</p>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">ตำแหน่งที่รับ:</label>
+                  <p>{{ project.positions }}</p>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">บริษัท:</label>
+                  <p>{{ project.company }}</p>
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label">Hashtags:</label>
+                  <p>{{ project.tags }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -20,13 +20,14 @@ export default {
   mounted() {
     for (let i = 0; i < 9; i++) {
       this.projects.push({
+        id: i,
         image: faker.image.business(640, 480, true),
         title: faker.name.jobTitle(),
         description: faker.lorem.paragraph(),
         qualification: faker.lorem.lines(),
         positions: faker.lorem.sentence(),
         company: faker.company.companyName(),
-        tag: faker.lorem.sentence(),
+        tags: faker.lorem.sentence(),
       });
     }
   },
