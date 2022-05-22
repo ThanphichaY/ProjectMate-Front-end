@@ -24,21 +24,11 @@ export default {
         title: faker.name.jobTitle(),
         description: faker.lorem.paragraph(),
         qualification: faker.lorem.lines(),
-        positions: [
-          faker.name.jobType(),
-          faker.name.jobType(),
-          faker.name.jobType(),
-        ],
+        positions: faker.lorem.sentence(),
         company: faker.company.companyName(),
-        tags: [
-          faker.company.bsNoun(),
-          faker.company.bsNoun(),
-          faker.company.bsNoun(),
-        ],
+        tag: faker.lorem.sentence(),
       });
     }
-
-    console.log(this.projects);
   },
 };
 </script>
@@ -51,7 +41,7 @@ export default {
         class="d-flex align-items-center text-dark text-decoration-none"
       >
         <i class="bi bi-journal-bookmark me-2" style="font-size: 32px"></i>
-        <span class="fs-4">Projects for you</span>
+        <span class="fs-4">โปรเจคงานสำหรับคุณ</span>
       </a>
     </div>
   </div>
@@ -61,6 +51,7 @@ export default {
       <Project v-for="project in projects" :project="project" />
     </div>
   </div>
+
   <div v-else class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <div class="col" v-for="project in projects">
@@ -69,9 +60,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped>
-.card {
-  min-width: 250px;
-}
-</style>
