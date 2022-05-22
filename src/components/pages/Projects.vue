@@ -1,5 +1,6 @@
 <script>
 import Project from "./contents/Project.vue";
+import { faker } from "@faker-js/faker";
 
 export default {
   components: {
@@ -10,6 +11,34 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  data() {
+    return {
+      projects: [],
+    };
+  },
+  mounted() {
+    for (let i = 0; i < 10; i++) {
+      this.projects.push({
+        image: faker.image.business(),
+        title: faker.name.jobTitle(),
+        description: faker.lorem.paragraph(),
+        qualification: faker.lorem.lines(),
+        positions: [
+          faker.name.jobType(),
+          faker.name.jobType(),
+          faker.name.jobType(),
+        ],
+        company: faker.company.companyName(),
+        tags: [
+          faker.company.bsNoun(),
+          faker.company.bsNoun(),
+          faker.company.bsNoun(),
+        ],
+      });
+    }
+
+    console.log(this.projects);
   },
 };
 </script>

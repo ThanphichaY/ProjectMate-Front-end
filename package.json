@@ -15,6 +15,7 @@
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "eslint": "^7.32.0",
