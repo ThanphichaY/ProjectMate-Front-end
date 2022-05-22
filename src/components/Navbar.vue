@@ -2,7 +2,9 @@
   <nav class="navbar navbar-expand-lg bg-secondary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Name</a>
-      <button
+      <router-link
+        to="/"
+        tag="button"
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -12,17 +14,23 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </router-link>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" class="nav-link" active-class="active"
+              >Home</router-link
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <router-link to="/projects" class="nav-link" active-class="active"
+              >Projects</router-link
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Colleagues</a>
+            <router-link to="colleagues" class="nav-link" active-class="active"
+              >Colleagues</router-link
+            >
           </li>
         </ul>
       </div>
