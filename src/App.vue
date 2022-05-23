@@ -21,8 +21,8 @@ export default {
 <style lang="scss">
 @use "sass:map";
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap");
-$font-family-base: "Noto Sans Thai", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Roboto&display=swap");
+$font-family-base: "Noto Sans Thai", "Roboto", sans-serif;
 
 $primary: #150095;
 $secondary: #ffd912;
