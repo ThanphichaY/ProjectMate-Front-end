@@ -15,7 +15,7 @@ export default {
     <div
       class="colleague-detail d-flex align-items-center flex-column bd-highlight mb-3"
     >
-      <h2 class="fw-normal">{{ colleague.name }}</h2>
+      <h3 class="fw-normal">{{ colleague.name }}</h3>
       <p class="overflow-auto">
         {{ colleague.capability }}
       </p>
