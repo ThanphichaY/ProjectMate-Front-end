@@ -19,6 +19,8 @@ export default {
 </template>
 
 <style lang="scss">
+@use "sass:map";
+
 $primary: #150095;
 $secondary: #ffd912;
 

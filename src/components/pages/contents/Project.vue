@@ -30,7 +30,7 @@ export default {
     </div>
   </div>
 
-  <!-- Project Modal -->
+  <!-- View Project Modal -->
   <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">

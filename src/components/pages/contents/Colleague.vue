@@ -30,7 +30,7 @@ export default {
     </div>
   </div>
 
-  <!-- Colleague Modal -->
+  <!-- View Colleague Modal -->
   <div class="modal fade" :id="'colleagueModal' + colleague.id" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
