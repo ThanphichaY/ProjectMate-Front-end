@@ -6,7 +6,7 @@
           <div
             class="bar-btn d-flex p-4 text-white bg-dark bg-opacity-75 rounded-3 w-100 mt-auto justify-content-between"
           >
-            <h4 class="m-2">สร้างโพสต์ตามหาเพื่อนร่วมโปรเจค</h4>
+            <h3 class="m-2">สร้างโพสต์ตามหาเพื่อนร่วมโปรเจค</h3>
             <button
               type="button"
               class="btn btn-outline-secondary m-2"
@@ -20,11 +20,11 @@
       </div>
 
       <div class="col-md-6 mb-4">
-        <div class="project-hero d-flex rounded-3 h-100">
+        <div class="colleague-hero d-flex rounded-3 h-100">
           <div
             class="bar-btn d-flex p-4 bg-light bg-opacity-75 rounded-3 w-100 mt-auto justify-content-between"
           >
-            <h4 class="m-2">สร้างโปรไฟล์สำหรับหางาน</h4>
+            <h3 class="m-2">สร้างโปรไฟล์สำหรับหางาน</h3>
             <button
               type="button"
               class="btn btn-outline-primary m-2"
