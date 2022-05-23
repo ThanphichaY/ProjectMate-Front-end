@@ -21,11 +21,11 @@ export default {
       </p>
       <button
         type="button"
-        class="btn btn-primary mt-auto"
+        class="btn btn-secondary mt-auto"
         data-bs-toggle="modal"
         :data-bs-target="'#colleagueModal' + colleague.id"
       >
-        More details
+        ดูเพิ่่มเติม
       </button>
     </div>
   </div>

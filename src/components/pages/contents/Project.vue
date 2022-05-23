@@ -24,7 +24,7 @@ export default {
           data-bs-toggle="modal"
           :data-bs-target="'#projectModal' + project.id"
         >
-          More details
+          ดูเพิ่่มเติม
         </button>
       </div>
     </div>
