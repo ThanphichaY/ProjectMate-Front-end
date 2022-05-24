@@ -35,7 +35,6 @@ export default {
     </div>
   </div>
 
-  <!-- View Project Modal -->
   <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
     <ViewProjectModal :project="project" />
   </div>
