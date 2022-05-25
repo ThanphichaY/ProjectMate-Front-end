@@ -1,3 +1,13 @@
+<script>
+import CreateProjectModal from "./modals/CreateProjectModal.vue";
+
+export default {
+  components: {
+    CreateProjectModal,
+  },
+};
+</script>
+
 <template>
   <div class="container py-4">
     <div class="options row align-items-md-stretch">
@@ -39,28 +49,8 @@
     </div>
   </div>
 
-  <!-- Create Project Modal -->
   <div class="modal fade" id="createProjectModal" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">สร้างโพสต์ตามหาเพื่อนร่วมโปรเจค</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-          ></button>
-        </div>
-
-        <div class="modal-body"></div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary w-100 m-2">
-            ติดต่อ
-          </button>
-        </div>
-      </div>
-    </div>
+    <CreateProjectModal />
   </div>
 
   <!-- Create Colleague Modal -->
