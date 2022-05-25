@@ -1,11 +1,13 @@
 <script>
 import CreateProjectModal from "./modals/CreateProjectModal.vue";
+import CreateColleagueModal from "./modals/CreateColleagueModal.vue";
 
 export default {
   components: {
     CreateProjectModal,
+    CreateColleagueModal,
   },
-  props: ["onAddProject"],
+  props: ["onAddProject", "onAddColleague"],
 };
 </script>
 
@@ -54,28 +56,8 @@ export default {
     <CreateProjectModal :onAddProject="onAddProject" />
   </div>
 
-  <!-- Create Colleague Modal -->
   <div class="modal fade" id="createColleagueModal" tabindex="-1">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">สร้างโปรไฟล์สำหรับหางาน</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-          ></button>
-        </div>
-
-        <div class="modal-body"></div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary w-100 m-2">
-            ติดต่อ
-          </button>
-        </div>
-      </div>
-    </div>
+    <CreateColleagueModal :onAddColleague="onAddColleague" />
   </div>
 </template>
 

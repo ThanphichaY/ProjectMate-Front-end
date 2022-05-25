@@ -25,7 +25,7 @@ export default {
           qualification: faker.lorem.lines(),
           positions: faker.lorem.sentence(),
           company: faker.company.companyName(),
-          contact: faker.phone.phoneNumber(),
+          project_contact: faker.phone.phoneNumber(),
         });
       }
     },
@@ -38,7 +38,7 @@ export default {
           int_pos: faker.lorem.sentence(),
           resume: faker.image.nature(640, 480, true),
           portfolio: faker.image.nature(640, 480, true),
-          contact: faker.phone.phoneNumber(),
+          colleague_contact: faker.phone.phoneNumber(),
         });
       }
     },
@@ -46,6 +46,11 @@ export default {
       const id = this.projects.length;
       const newProject = { id, ...project };
       this.projects.push(newProject);
+    },
+    addColleague(colleague) {
+      const id = this.colleagues.length;
+      const newColleague = { id, ...colleague };
+      this.colleagues.push(newColleague);
     },
   },
   mounted() {
@@ -62,6 +67,7 @@ export default {
       :projects="projects"
       :colleagues="colleagues"
       :onAddProject="addProject"
+      :onAddColleague="addColleague"
     />
     <Footer />
   </div>

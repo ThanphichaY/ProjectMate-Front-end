@@ -44,13 +44,13 @@ export default {
               </div>
 
               <div class="row">
-                <div class="col">
+                <div v-if="colleague.resume" class="col">
                   <button type="button" class="btn btn-secondary w-100 m-2">
                     <i class="bi bi-cloud-download me-1"></i>
                     Resume
                   </button>
                 </div>
-                <div class="col">
+                <div v-if="colleague.portfolio" class="col">
                   <button type="button" class="btn btn-secondary w-100 m-2">
                     <i class="bi bi-cloud-download me-1"></i>
                     Portfolio

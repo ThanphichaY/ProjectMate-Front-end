@@ -20,11 +20,8 @@ export default {
         qualification: "",
         positions: "",
         company: "",
-        contact: "",
-        password: "",
-      },
-      uploadcare_options: {
-        "data-system-dialog": "true",
+        project_contact: "",
+        project_password: "",
       },
     };
   },
@@ -37,8 +34,8 @@ export default {
         qualification: { required },
         positions: { required },
         company: { required },
-        contact: { required },
-        password: { required },
+        project_contact: { required },
+        project_password: { required },
       },
     };
   },
@@ -47,7 +44,7 @@ export default {
       return this.project_form.image ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
     },
     uploadButtonClass() {
-      return this.project_form.image ? "btn-success" : "btn-secondary";
+      return this.project_form.image ? "btn-success" : "btn-danger";
     },
   },
   methods: {
@@ -64,8 +61,8 @@ export default {
         qualification: "",
         positions: "",
         company: "",
-        contact: "",
-        password: "",
+        project_contact: "",
+        project_password: "",
       };
     },
   },
@@ -77,7 +74,7 @@ export default {
     <div class="modal-content">
       <form @submit.prevent="submitProjectForm">
         <div class="modal-header">
-          <h5 class="modal-title">สร้างโพสต์ตามหาเพื่อนร่วมโปรเจค</h5>
+          <h5 class="modal-title">สร้างโพสต์โปรเจคงานของคุณ</h5>
           <button
             type="button"
             class="btn-close"
@@ -87,21 +84,20 @@ export default {
 
         <div class="modal-body">
           <div class="row mb-3">
-            <label for="image" class="col-sm-2 col-form-label">รูป</label>
-            <div class="col-sm-10">
+            <label for="image" class="col-sm-3 col-form-label">รูป</label>
+            <div class="col-sm-9">
               <UploadcareWidget
                 :buttonText="uploadButtonText"
                 :buttonClass="uploadButtonClass"
                 publicKey="c216308c562da69b96a9"
-                :options="uploadcare_options"
                 @input="uploadedProjectFile"
               />
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="title" class="col-sm-2 col-form-label">หัวข้องาน</label>
-            <div class="col-sm-10">
+            <label for="title" class="col-sm-3 col-form-label">หัวข้องาน</label>
+            <div class="col-sm-9">
               <input
                 type="text"
                 class="form-control"
@@ -114,10 +110,10 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="description" class="col-sm-2 col-form-label"
+            <label for="description" class="col-sm-3 col-form-label"
               >รายละเอียดงาน</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <textarea
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.description.$error }"
@@ -130,10 +126,10 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="qualification" class="col-sm-2 col-form-label"
+            <label for="qualification" class="col-sm-3 col-form-label"
               >คุณสมบัติผู้ร่วมงาน</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <textarea
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.qualification.$error }"
@@ -146,10 +142,10 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="positions" class="col-sm-2 col-form-label"
+            <label for="positions" class="col-sm-3 col-form-label"
               >ตำแหน่งที่รับ</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <input
                 type="text"
                 class="form-control"
@@ -162,10 +158,10 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="company" class="col-sm-2 col-form-label"
+            <label for="company" class="col-sm-3 col-form-label"
               >ชื่อบริษัท</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <input
                 type="text"
                 class="form-control"
@@ -180,33 +176,37 @@ export default {
           <hr />
 
           <div class="row mb-3">
-            <label for="contact" class="col-sm-2 col-form-label"
+            <label for="project_contact" class="col-sm-3 col-form-label"
               >วิธีติดต่อ</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <textarea
                 class="form-control"
-                :class="{ 'is-invalid': v$.project_form.company.$error }"
-                id="contact"
+                :class="{
+                  'is-invalid': v$.project_form.project_contact.$error,
+                }"
+                id="project_contact"
                 rows="4"
-                v-model="project_form.contact"
-                @blur="v$.project_form.company.$touch"
+                v-model="project_form.project_contact"
+                @blur="v$.project_form.project_contact.$touch"
               />
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="password" class="col-sm-2 col-form-label"
+            <label for="project_password" class="col-sm-3 col-form-label"
               >ตั้งรหัสโพสต์</label
             >
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <input
                 type="password"
                 class="form-control"
-                :class="{ 'is-invalid': v$.project_form.password.$error }"
-                id="password"
-                v-model="project_form.password"
-                @blur="v$.project_form.password.$touch"
+                :class="{
+                  'is-invalid': v$.project_form.project_password.$error,
+                }"
+                id="project_password"
+                v-model="project_form.project_password"
+                @blur="v$.project_form.project_password.$touch"
               />
             </div>
           </div>
