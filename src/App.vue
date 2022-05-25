@@ -1,11 +1,51 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import { faker } from "@faker-js/faker";
 
 export default {
   components: {
     Navbar,
     Footer,
+  },
+  data() {
+    return {
+      projects: [],
+      colleagues: [],
+    };
+  },
+  methods: {
+    generateFakeProjects() {
+      for (let i = 0; i < 9; i++) {
+        this.projects.push({
+          id: i,
+          image: faker.image.business(640, 480, true),
+          title: faker.name.jobTitle(),
+          description: faker.lorem.paragraph(),
+          qualification: faker.lorem.lines(),
+          positions: faker.lorem.sentence(),
+          company: faker.company.companyName(),
+          contact: faker.phone.phoneNumber(),
+        });
+      }
+    },
+    generateFakeColleagues() {
+      for (let i = 0; i < 9; i++) {
+        this.colleagues.push({
+          image: faker.image.people(640, 480, true),
+          name: faker.name.findName(),
+          capability: faker.lorem.paragraph(),
+          int_pos: faker.lorem.sentence(),
+          resume: faker.image.nature(640, 480, true),
+          portfolio: faker.image.nature(640, 480, true),
+          contact: faker.phone.phoneNumber(),
+        });
+      }
+    },
+  },
+  mounted() {
+    this.generateFakeProjects();
+    this.generateFakeColleagues();
   },
 };
 </script>
@@ -13,7 +53,7 @@ export default {
 <template>
   <div id="app">
     <Navbar />
-    <router-view></router-view>
+    <router-view :projects="projects" :colleagues="colleagues" />
     <Footer />
   </div>
 </template>

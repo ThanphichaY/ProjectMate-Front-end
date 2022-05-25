@@ -1,33 +1,21 @@
 <script>
 import Colleague from "./contents/Colleague.vue";
-import { faker } from "@faker-js/faker";
 
 export default {
   components: {
     Colleague,
   },
   props: {
+    projects: {
+      type: Array,
+    },
+    colleagues: {
+      type: Array,
+    },
     slide: {
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      colleagues: [],
-    };
-  },
-  mounted() {
-    for (let i = 0; i < 9; i++) {
-      this.colleagues.push({
-        image: faker.image.people(640, 480, true),
-        name: faker.name.findName(),
-        capability: faker.lorem.paragraph(),
-        int_pos: faker.lorem.sentence(),
-        resume: faker.image.nature(640, 480, true),
-        portfolio: faker.image.nature(640, 480, true),
-      });
-    }
   },
 };
 </script>

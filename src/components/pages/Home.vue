@@ -11,12 +11,13 @@ export default {
     Colleagues,
     Album,
   },
+  props: ["projects", "colleagues"],
 };
 </script>
 
 <template>
   <Jumbotron />
-  <Projects :slide="true" />
-  <Colleagues :slide="true" />
+  <Projects :slide="true" :projects="projects" />
+  <Colleagues :slide="true" :colleagues="colleagues" />
   <Album />
 </template>
