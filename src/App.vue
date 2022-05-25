@@ -42,6 +42,11 @@ export default {
         });
       }
     },
+    addProject(project) {
+      const id = this.projects.length;
+      const newProject = { id, ...project };
+      this.projects.push(newProject);
+    },
   },
   mounted() {
     this.generateFakeProjects();
@@ -53,7 +58,11 @@ export default {
 <template>
   <div id="app">
     <Navbar />
-    <router-view :projects="projects" :colleagues="colleagues" />
+    <router-view
+      :projects="projects"
+      :colleagues="colleagues"
+      :onAddProject="addProject"
+    />
     <Footer />
   </div>
 </template>

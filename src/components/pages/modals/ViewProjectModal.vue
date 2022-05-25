@@ -36,10 +36,6 @@ export default {
               </div>
               <div class="mb-3">
                 <label class="col-form-label">คุณสมบัติผู้ร่วมงาน:</label>
-                <p>{{ project.description }}</p>
-              </div>
-              <div class="mb-3">
-                <label class="col-form-label">รายละเอียดงาน:</label>
                 <p>{{ project.qualification }}</p>
               </div>
               <div class="mb-3">

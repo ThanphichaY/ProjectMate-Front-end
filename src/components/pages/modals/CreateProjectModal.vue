@@ -7,7 +7,7 @@ export default {
   components: {
     UploadcareWidget,
   },
-
+  props: ["onAddProject"],
   setup() {
     return { v$: useVuelidate() };
   },
@@ -17,6 +17,7 @@ export default {
         image: "",
         title: "",
         description: "",
+        qualification: "",
         positions: "",
         company: "",
         contact: "",
@@ -33,6 +34,7 @@ export default {
         image: {},
         title: { required },
         description: { required },
+        qualification: { required },
         positions: { required },
         company: { required },
         contact: { required },
@@ -53,7 +55,18 @@ export default {
       this.project_form.image = cdnUrl;
     },
     submitProjectForm() {
-      console.log("hi");
+      this.onAddProject(this.project_form);
+      this.v$.$reset();
+      this.project_form = {
+        image: "",
+        title: "",
+        description: "",
+        qualification: "",
+        positions: "",
+        company: "",
+        contact: "",
+        password: "",
+      };
     },
   },
 };
@@ -112,6 +125,22 @@ export default {
                 rows="4"
                 v-model="project_form.description"
                 @blur="v$.project_form.description.$touch"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="qualification" class="col-sm-2 col-form-label"
+              >คุณสมบัติผู้ร่วมงาน</label
+            >
+            <div class="col-sm-10">
+              <textarea
+                class="form-control"
+                :class="{ 'is-invalid': v$.project_form.qualification.$error }"
+                id="qualification"
+                rows="4"
+                v-model="project_form.qualification"
+                @blur="v$.project_form.qualification.$touch"
               />
             </div>
           </div>
@@ -188,6 +217,7 @@ export default {
             type="submit"
             class="btn btn-success w-100 m-2"
             :disabled="v$.$invalid"
+            data-bs-dismiss="modal"
           >
             <i class="bi bi-file-earmark-plus me-1"></i>
             สร้างโพสต์

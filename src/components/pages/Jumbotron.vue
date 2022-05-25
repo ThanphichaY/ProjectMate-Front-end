@@ -5,6 +5,7 @@ export default {
   components: {
     CreateProjectModal,
   },
+  props: ["onAddProject"],
 };
 </script>
 
@@ -50,7 +51,7 @@ export default {
   </div>
 
   <div class="modal fade" id="createProjectModal" tabindex="-1">
-    <CreateProjectModal />
+    <CreateProjectModal :onAddProject="onAddProject" />
   </div>
 
   <!-- Create Colleague Modal -->

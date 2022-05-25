@@ -16,6 +16,9 @@ export default {
       type: Boolean,
       default: false,
     },
+    onAddProject: {
+      type: Function,
+    },
   },
 };
 </script>
