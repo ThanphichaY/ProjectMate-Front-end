@@ -26,12 +26,14 @@ export default {
           positions: faker.lorem.sentence(),
           company: faker.company.companyName(),
           project_contact: faker.phone.phoneNumber(),
+          project_password: faker.internet.password(),
         });
       }
     },
     generateFakeColleagues() {
       for (let i = 0; i < 9; i++) {
         this.colleagues.push({
+          id: i,
           image: faker.image.people(640, 480, true),
           name: faker.name.findName(),
           capability: faker.lorem.paragraph(),
@@ -39,6 +41,7 @@ export default {
           resume: faker.image.nature(640, 480, true),
           portfolio: faker.image.nature(640, 480, true),
           colleague_contact: faker.phone.phoneNumber(),
+          colleague_password: faker.internet.password(),
         });
       }
     },

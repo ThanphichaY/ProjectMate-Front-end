@@ -80,7 +80,6 @@ export default {
         resume: "",
         portfolio: "",
         colleague_contact: "",
-        colleague_contact: "",
         colleague_password: "",
       };
     },
