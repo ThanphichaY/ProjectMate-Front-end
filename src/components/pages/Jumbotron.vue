@@ -71,12 +71,12 @@ export default {
 }
 
 .project-hero {
-  background-image: url("../../assets/project.jpg");
+  background-image: url("@/assets/project.jpg");
   background-position: center;
 }
 
 .colleague-hero {
-  background-image: url("../../assets/colleague.jpg");
+  background-image: url("@/assets/colleague.jpg");
   background-position: center;
 }
 </style>
