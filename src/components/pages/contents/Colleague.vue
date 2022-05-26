@@ -1,5 +1,10 @@
 <script>
+import ViewColleagueModal from "../modals/ViewColleagueModal.vue";
+
 export default {
+  components: {
+    ViewColleagueModal,
+  },
   props: ["colleague"],
 };
 </script>
@@ -19,8 +24,19 @@ export default {
       <p class="overflow-auto">
         {{ colleague.capability }}
       </p>
-      <a class="btn btn-secondary mt-auto" href="#">View details &raquo;</a>
+      <button
+        type="button"
+        class="btn btn-primary mt-auto"
+        data-bs-toggle="modal"
+        :data-bs-target="'#colleagueModal' + colleague.id"
+      >
+        More details
+      </button>
     </div>
+  </div>
+
+  <div class="modal fade" :id="'colleagueModal' + colleague.id" tabindex="-1">
+    <ViewColleagueModal :colleague="colleague" />
   </div>
 </template>
 

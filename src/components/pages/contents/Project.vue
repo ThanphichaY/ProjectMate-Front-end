@@ -1,5 +1,10 @@
 <script>
+import ViewProjectModal from "../modals/ViewProjectModal.vue";
+
 export default {
+  components: {
+    ViewProjectModal,
+  },
   props: ["project"],
 };
 </script>
@@ -18,9 +23,20 @@ export default {
         <p class="card-text overflow-auto">
           {{ project.description }}
         </p>
-        <a href="#" class="btn btn-primary mt-auto">More details</a>
+        <button
+          type="button"
+          class="btn btn-primary mt-auto"
+          data-bs-toggle="modal"
+          :data-bs-target="'#projectModal' + project.id"
+        >
+          More details
+        </button>
       </div>
     </div>
+  </div>
+
+  <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
+    <ViewProjectModal :project="project" />
   </div>
 </template>
 

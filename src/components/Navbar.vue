@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-secondary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Name</a>
+      <a class="navbar-brand" href="#">ProjectMate</a>
       <router-link
         to="/"
         tag="button"

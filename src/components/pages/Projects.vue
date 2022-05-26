@@ -1,34 +1,24 @@
 <script>
 import Project from "./contents/Project.vue";
-import { faker } from "@faker-js/faker";
 
 export default {
   components: {
     Project,
   },
   props: {
+    projects: {
+      type: Array,
+    },
+    colleagues: {
+      type: Array,
+    },
     slide: {
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      projects: [],
-    };
-  },
-  mounted() {
-    for (let i = 0; i < 9; i++) {
-      this.projects.push({
-        image: faker.image.business(640, 480, true),
-        title: faker.name.jobTitle(),
-        description: faker.lorem.paragraph(),
-        qualification: faker.lorem.lines(),
-        positions: faker.lorem.sentence(),
-        company: faker.company.companyName(),
-        tag: faker.lorem.sentence(),
-      });
-    }
+    onAddProject: {
+      type: Function,
+    },
   },
 };
 </script>
