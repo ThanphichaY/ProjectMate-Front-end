@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ["colleague"],
+  props: ["colleague", "onDeleteColleague"],
 };
 </script>
 
@@ -43,7 +43,7 @@ export default {
                 <p>{{ colleague.int_pos }}</p>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div v-if="colleague.resume" class="col">
                   <button type="button" class="btn btn-secondary w-100 m-2">
                     <i class="bi bi-cloud-download me-1"></i>
@@ -56,6 +56,19 @@ export default {
                     Portfolio
                   </button>
                 </div>
+              </div>
+
+              <div class="mb-3 text-end">
+                <i
+                  class="bi bi-pencil-square h4 text-warning mx-2"
+                  style="cursor: pointer"
+                ></i>
+                <i
+                  class="bi bi-trash h4 text-danger mx-2"
+                  style="cursor: pointer"
+                  @click="onDeleteColleague(colleague.id)"
+                  data-bs-dismiss="modal"
+                ></i>
               </div>
             </div>
           </div>

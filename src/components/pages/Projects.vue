@@ -25,6 +25,9 @@ export default {
     onDeleteProject: {
       type: Function,
     },
+    onDeleteColleague: {
+      type: Function,
+    },
   },
 };
 </script>

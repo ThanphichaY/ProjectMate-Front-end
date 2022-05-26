@@ -58,6 +58,11 @@ export default {
     deleteProject(id) {
       this.projects = this.projects.filter((project) => project.id !== id);
     },
+    deleteColleague(id) {
+      this.colleagues = this.colleagues.filter(
+        (colleague) => colleague.id !== id
+      );
+    },
   },
   mounted() {
     this.generateFakeProjects();
@@ -75,6 +80,7 @@ export default {
       :onAddProject="addProject"
       :onAddColleague="addColleague"
       :onDeleteProject="deleteProject"
+      :onDeleteColleague="deleteColleague"
     />
     <Footer />
   </div>

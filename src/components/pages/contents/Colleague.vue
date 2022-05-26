@@ -5,7 +5,7 @@ export default {
   components: {
     ViewColleagueModal,
   },
-  props: ["colleague"],
+  props: ["colleague", "onDeleteColleague"],
 };
 </script>
 
@@ -36,7 +36,10 @@ export default {
   </div>
 
   <div class="modal fade" :id="'colleagueModal' + colleague.id" tabindex="-1">
-    <ViewColleagueModal :colleague="colleague" />
+    <ViewColleagueModal
+      :colleague="colleague"
+      :onDeleteColleague="onDeleteColleague"
+    />
   </div>
 </template>
 

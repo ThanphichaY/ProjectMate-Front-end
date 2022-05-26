@@ -25,6 +25,9 @@ export default {
     onDeleteProject: {
       type: Function,
     },
+    onDeleteColleague: {
+      type: Function,
+    },
   },
 };
 </script>
@@ -48,13 +51,20 @@ export default {
       v-dragscroll
       style="cursor: grab"
     >
-      <Colleague v-for="colleague in colleagues" :colleague="colleague" />
+      <Colleague
+        v-for="colleague in colleagues"
+        :colleague="colleague"
+        :onDeleteColleague="onDeleteColleague"
+      />
     </div>
   </div>
   <div v-else class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
       <div class="col" v-for="colleague in colleagues">
-        <Colleague :colleague="colleague" />
+        <Colleague
+          :colleague="colleague"
+          :onDeleteColleague="onDeleteColleague"
+        />
       </div>
     </div>
   </div>

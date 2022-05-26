@@ -17,6 +17,7 @@ export default {
     "onAddProject",
     "onAddColleague",
     "onDeleteProject",
+    "onDeleteColleague",
   ],
 };
 </script>
@@ -28,6 +29,10 @@ export default {
     :projects="projects"
     :onDeleteProject="onDeleteProject"
   />
-  <Colleagues :slide="true" :colleagues="colleagues" />
+  <Colleagues
+    :slide="true"
+    :colleagues="colleagues"
+    :onDeleteColleague="onDeleteColleague"
+  />
   <Album />
 </template>
