@@ -7,7 +7,7 @@ export default {
   components: {
     UploadcareWidget,
   },
-  props: ["onAddProject"],
+  props: ["project", "onAddProject"],
   setup() {
     return { v$: useVuelidate() };
   },
@@ -28,7 +28,7 @@ export default {
   validations() {
     return {
       project_form: {
-        image: { required },
+        image: {},
         title: { required },
         description: { required },
         qualification: { required },
@@ -84,7 +84,7 @@ export default {
 
         <div class="modal-body">
           <div class="row mb-3">
-            <label for="image" class="col-sm-3 col-form-label">รูป</label>
+            <label for="edit-image" class="col-sm-3 col-form-label">รูป</label>
             <div class="col-sm-9">
               <UploadcareWidget
                 :buttonText="uploadButtonText"
@@ -96,13 +96,15 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="title" class="col-sm-3 col-form-label">หัวข้องาน</label>
+            <label for="edit-title" class="col-sm-3 col-form-label"
+              >หัวข้องาน</label
+            >
             <div class="col-sm-9">
               <input
                 type="text"
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.title.$error }"
-                id="title"
+                :id="'edit-title' + project.id"
                 v-model="project_form.title"
                 @blur="v$.project_form.title.$touch"
               />
@@ -110,14 +112,14 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="description" class="col-sm-3 col-form-label"
+            <label for="edit-description" class="col-sm-3 col-form-label"
               >รายละเอียดงาน</label
             >
             <div class="col-sm-9">
               <textarea
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.description.$error }"
-                id="description"
+                :id="'edit-description' + project.id"
                 rows="4"
                 v-model="project_form.description"
                 @blur="v$.project_form.description.$touch"
@@ -126,14 +128,14 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="qualification" class="col-sm-3 col-form-label"
+            <label for="edit-qualification" class="col-sm-3 col-form-label"
               >คุณสมบัติผู้ร่วมงาน</label
             >
             <div class="col-sm-9">
               <textarea
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.qualification.$error }"
-                id="qualification"
+                :id="'edit-qualification' + project.id"
                 rows="4"
                 v-model="project_form.qualification"
                 @blur="v$.project_form.qualification.$touch"
@@ -142,7 +144,7 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="positions" class="col-sm-3 col-form-label"
+            <label for="edit-positions" class="col-sm-3 col-form-label"
               >ตำแหน่งที่รับ</label
             >
             <div class="col-sm-9">
@@ -150,7 +152,7 @@ export default {
                 type="text"
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.positions.$error }"
-                id="positions"
+                :id="'edit-positions' + project.id"
                 v-model="project_form.positions"
                 @blur="v$.project_form.positions.$touch"
               />
@@ -158,7 +160,7 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="company" class="col-sm-3 col-form-label"
+            <label for="edit-company" class="col-sm-3 col-form-label"
               >ชื่อบริษัท</label
             >
             <div class="col-sm-9">
@@ -166,7 +168,7 @@ export default {
                 type="text"
                 class="form-control"
                 :class="{ 'is-invalid': v$.project_form.company.$error }"
-                id="company"
+                :id="'edit-company' + project.id"
                 v-model="project_form.company"
                 @blur="v$.project_form.company.$touch"
               />
@@ -176,7 +178,7 @@ export default {
           <hr />
 
           <div class="row mb-3">
-            <label for="project_contact" class="col-sm-3 col-form-label"
+            <label for="edit-project_contact" class="col-sm-3 col-form-label"
               >วิธีติดต่อ</label
             >
             <div class="col-sm-9">
@@ -185,7 +187,7 @@ export default {
                 :class="{
                   'is-invalid': v$.project_form.project_contact.$error,
                 }"
-                id="project_contact"
+                :id="'edit-project_contact' + project.id"
                 rows="4"
                 v-model="project_form.project_contact"
                 @blur="v$.project_form.project_contact.$touch"
@@ -194,7 +196,7 @@ export default {
           </div>
 
           <div class="row mb-3">
-            <label for="project_password" class="col-sm-3 col-form-label"
+            <label for="edit-project_password" class="col-sm-3 col-form-label"
               >ตั้งรหัสโพสต์</label
             >
             <div class="col-sm-9">
@@ -204,7 +206,7 @@ export default {
                 :class="{
                   'is-invalid': v$.project_form.project_password.$error,
                 }"
-                id="project_password"
+                :id="'edit-project_password' + project.id"
                 v-model="project_form.project_password"
                 @blur="v$.project_form.project_password.$touch"
               />

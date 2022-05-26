@@ -63,6 +63,12 @@ export default {
         (colleague) => colleague.id !== id
       );
     },
+    editProject(edit_project) {
+      const objIndex = this.projects.findIndex(
+        (project) => project.id == edit_project.id
+      );
+      this.projects[objIndex] = edit_project;
+    },
   },
   mounted() {
     this.generateFakeProjects();
@@ -81,6 +87,7 @@ export default {
       :onAddColleague="addColleague"
       :onDeleteProject="deleteProject"
       :onDeleteColleague="deleteColleague"
+      :onEditProject="editProject"
     />
     <Footer />
   </div>

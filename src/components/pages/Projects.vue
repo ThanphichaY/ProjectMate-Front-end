@@ -28,6 +28,9 @@ export default {
     onDeleteColleague: {
       type: Function,
     },
+    onEditProject: {
+      type: Function,
+    },
   },
 };
 </script>
@@ -55,6 +58,7 @@ export default {
         v-for="project in projects"
         :project="project"
         :onDeleteProject="onDeleteProject"
+        :onEditProject="onEditProject"
       />
     </div>
   </div>
@@ -62,7 +66,11 @@ export default {
   <div v-else class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <div class="col" v-for="project in projects">
-        <Project :project="project" :onDeleteProject="onDeleteProject" />
+        <Project
+          :project="project"
+          :onDeleteProject="onDeleteProject"
+          :onEditProject="onEditProject"
+        />
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ export default {
   components: {
     ViewProjectModal,
   },
-  props: ["project", "onDeleteProject"],
+  props: ["project", "onDeleteProject", "onEditProject"],
 };
 </script>
 
@@ -36,7 +36,11 @@ export default {
   </div>
 
   <div class="modal fade" :id="'projectModal' + project.id" tabindex="-1">
-    <ViewProjectModal :project="project" :onDeleteProject="onDeleteProject" />
+    <ViewProjectModal
+      :project="project"
+      :onDeleteProject="onDeleteProject"
+      :onEditProject="onEditProject"
+    />
   </div>
 </template>
 
