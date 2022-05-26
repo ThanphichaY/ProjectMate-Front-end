@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-xl" style="cursor: auto">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">
@@ -45,6 +45,16 @@ export default {
               <div class="mb-3">
                 <label class="col-form-label">บริษัท:</label>
                 <p>{{ project.company }}</p>
+              </div>
+              <div class="mb-3 text-end">
+                <i
+                  class="bi bi-pencil-square h4 text-warning mx-2"
+                  style="cursor: pointer"
+                ></i>
+                <i
+                  class="bi bi-trash h4 text-danger mx-2"
+                  style="cursor: pointer"
+                ></i>
               </div>
             </div>
           </div>
