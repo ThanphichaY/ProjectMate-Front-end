@@ -12,70 +12,64 @@
             <use xlink:href="#bootstrap" />
           </svg>
         </a>
-        <p class="text-muted">&copy; 2022</p>
+        <p class="text-muted">&copy; 2022 ProjectMate</p>
       </div>
 
       <div class="col mb-3"></div>
 
       <div class="col mb-3">
-        <h5>Section</h5>
+        <h5>Company</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Home</a>
+            <a href="#" class="nav-link p-0 text-muted">About us</a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Features</a>
+            <a href="#" class="nav-link p-0 text-muted">Products</a>
           </li>
           <li class="nav-item mb-2">
             <a href="#" class="nav-link p-0 text-muted">Pricing</a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">About</a>
+            <a href="#" class="nav-link p-0 text-muted">Career</a>
           </li>
         </ul>
       </div>
 
       <div class="col mb-3">
-        <h5>Section</h5>
+        <h5>Support</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Home</a>
+            <a href="#" class="nav-link p-0 text-muted">Terms of use</a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Features</a>
+            <a href="#" class="nav-link p-0 text-muted">Privacy policy</a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Pricing</a>
+            <a href="#" class="nav-link p-0 text-muted">Contact support</a>
           </li>
           <li class="nav-item mb-2">
             <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">About</a>
           </li>
         </ul>
       </div>
 
       <div class="col mb-3">
-        <h5>Section</h5>
+        <h5>Follow Us</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Home</a>
+            <a href="#" class="nav-link p-0 text-muted">
+              <i class="bi bi-facebook"></i>
+            </a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Features</a>
+            <a href="#" class="nav-link p-0 text-muted">
+              <i class="bi bi-twitter"></i>
+            </a>
           </li>
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">Pricing</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="#" class="nav-link p-0 text-muted">About</a>
+            <a href="#" class="nav-link p-0 text-muted">
+              <i class="bi bi-instagram"></i>
+            </a>
           </li>
         </ul>
       </div>
