@@ -19,6 +19,12 @@ export default {
     onAddProject: {
       type: Function,
     },
+    onAddColleague: {
+      type: Function,
+    },
+    onDeleteProject: {
+      type: Function,
+    },
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <script>
-import ViewColleagueModal from "../modals/ViewColleagueModal.vue";
+import ViewColleagueModal from "./modals/ViewColleagueModal.vue";
 
 export default {
   components: {

@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ["project"],
+  props: ["project", "onDeleteProject"],
 };
 </script>
 
@@ -54,6 +54,8 @@ export default {
                 <i
                   class="bi bi-trash h4 text-danger mx-2"
                   style="cursor: pointer"
+                  @click="onDeleteProject(project.id)"
+                  data-bs-dismiss="modal"
                 ></i>
               </div>
             </div>

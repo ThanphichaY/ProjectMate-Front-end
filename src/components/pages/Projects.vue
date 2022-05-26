@@ -19,6 +19,12 @@ export default {
     onAddProject: {
       type: Function,
     },
+    onAddColleague: {
+      type: Function,
+    },
+    onDeleteProject: {
+      type: Function,
+    },
   },
 };
 </script>
@@ -42,14 +48,18 @@ export default {
       v-dragscroll
       style="cursor: grab"
     >
-      <Project v-for="project in projects" :project="project" />
+      <Project
+        v-for="project in projects"
+        :project="project"
+        :onDeleteProject="onDeleteProject"
+      />
     </div>
   </div>
 
   <div v-else class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <div class="col" v-for="project in projects">
-        <Project :project="project" />
+        <Project :project="project" :onDeleteProject="onDeleteProject" />
       </div>
     </div>
   </div>

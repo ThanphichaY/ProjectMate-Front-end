@@ -55,6 +55,9 @@ export default {
       const newColleague = { id, ...colleague };
       this.colleagues.push(newColleague);
     },
+    deleteProject(id) {
+      this.projects = this.projects.filter((project) => project.id !== id);
+    },
   },
   mounted() {
     this.generateFakeProjects();
@@ -71,6 +74,7 @@ export default {
       :colleagues="colleagues"
       :onAddProject="addProject"
       :onAddColleague="addColleague"
+      :onDeleteProject="deleteProject"
     />
     <Footer />
   </div>
