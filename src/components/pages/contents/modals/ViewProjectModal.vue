@@ -138,7 +138,7 @@ export default {
                   <p v-else>{{ project.positions }}</p>
                 </div>
                 <div class="mb-3">
-                  <label class="col-form-label">บริษัท:</label>
+                  <label class="col-form-label">องค์กร:</label>
                   <input
                     v-if="edit_mode"
                     type="text"

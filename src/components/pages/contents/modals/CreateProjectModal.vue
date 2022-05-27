@@ -159,7 +159,7 @@ export default {
 
           <div class="row mb-3">
             <label for="company" class="col-sm-3 col-form-label"
-              >ชื่อบริษัท</label
+              >ชื่อองค์กร</label
             >
             <div class="col-sm-9">
               <input
