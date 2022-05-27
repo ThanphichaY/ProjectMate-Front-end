@@ -42,7 +42,7 @@ export default {
       this.project_form.image = cdnUrl;
     },
     submitEditProjectForm() {
-      this.onEditProject(this.project_form);
+      this.onEditProject({ ...this.project_form, id: this.project.id });
       this.v$.$reset();
       this.toggleEdit();
     },

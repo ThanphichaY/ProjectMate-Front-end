@@ -1,7 +1,6 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-import { faker } from "@faker-js/faker";
 
 export default {
   components: {
@@ -12,73 +11,136 @@ export default {
     return {
       projects: [],
       colleagues: [],
+      loading: false,
     };
   },
   methods: {
-    generateFakeProjects() {
-      for (let i = 0; i < 9; i++) {
-        this.projects.push({
-          id: i,
-          image: faker.image.business(640, 480, true),
-          title: faker.name.jobTitle(),
-          description: faker.lorem.paragraph(),
-          qualification: faker.lorem.lines(),
-          positions: faker.lorem.sentence(),
-          company: faker.company.companyName(),
-          project_contact: faker.phone.phoneNumber(),
-          project_password: faker.internet.password(),
-        });
+    async getProjects() {
+      this.loading = true;
+
+      try {
+        let response = await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/project/read.php"
+        );
+        this.projects = await response.json();
+        this.loading = false;
+      } catch (error) {
+        console.log(error);
       }
     },
-    generateFakeColleagues() {
-      for (let i = 0; i < 9; i++) {
-        this.colleagues.push({
-          id: i,
-          image: faker.image.people(640, 480, true),
-          name: faker.name.findName(),
-          capability: faker.lorem.paragraph(),
-          int_pos: faker.lorem.sentence(),
-          resume: faker.image.nature(640, 480, true),
-          portfolio: faker.image.nature(640, 480, true),
-          colleague_contact: faker.phone.phoneNumber(),
-          colleague_password: faker.internet.password(),
-        });
+    async getColleagues() {
+      this.loading = true;
+
+      try {
+        let response = await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/colleague/read.php"
+        );
+        this.colleagues = await response.json();
+        this.loading = false;
+      } catch (error) {
+        console.log(error);
       }
     },
-    addProject(project) {
-      const id = this.projects.length;
-      const newProject = { id, ...project };
-      this.projects.push(newProject);
+    async addProject(project) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify(project),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/project/create.php",
+          requestOptions
+        );
+
+        await this.getProjects();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    addColleague(colleague) {
-      const id = this.colleagues.length;
-      const newColleague = { id, ...colleague };
-      this.colleagues.push(newColleague);
+    async addColleague(colleague) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify(colleague),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/colleague/create.php",
+          requestOptions
+        );
+
+        await this.getColleagues();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    deleteProject(id) {
-      this.projects = this.projects.filter((project) => project.id !== id);
+    async deleteProject(id) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify({ id: id }),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/project/delete.php",
+          requestOptions
+        );
+
+        await this.getProjects();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    deleteColleague(id) {
-      this.colleagues = this.colleagues.filter(
-        (colleague) => colleague.id !== id
-      );
+    async deleteColleague(id) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify({ id: id }),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/colleague/delete.php",
+          requestOptions
+        );
+
+        await this.getColleagues();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    editProject(edit_project) {
-      const objIndex = this.projects.findIndex(
-        (project) => project.id == edit_project.id
-      );
-      this.projects[objIndex] = edit_project;
+    async editProject(project) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify(project),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/project/update.php",
+          requestOptions
+        );
+
+        await this.getProjects();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    editColleague(edit_colleague) {
-      const objIndex = this.colleagues.findIndex(
-        (colleague) => colleague.id == edit_colleague.id
-      );
-      this.colleagues[objIndex] = edit_colleague;
+    async editColleague(colleague) {
+      try {
+        const requestOptions = {
+          method: "POST",
+          body: JSON.stringify(colleague),
+        };
+        await fetch(
+          "https://jjwebprog.000webhostapp.com/ProjectMate/colleague/update.php",
+          requestOptions
+        );
+
+        await this.getColleagues();
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
   mounted() {
-    this.generateFakeProjects();
-    this.generateFakeColleagues();
+    this.getProjects();
+    this.getColleagues();
   },
 };
 </script>

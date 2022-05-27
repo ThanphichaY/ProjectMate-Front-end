@@ -65,6 +65,7 @@ export default {
       />
     </div>
   </div>
+
   <div v-else class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
       <div class="col" v-for="colleague in colleagues">
@@ -74,6 +75,17 @@ export default {
           :onEditColleague="onEditColleague"
         />
       </div>
+    </div>
+  </div>
+
+  <div
+    v-if="colleagues.length == 0"
+    class="text-center text-muted"
+    style="height: 376px; padding-top: 64px"
+  >
+    <h1 class="display-1"><i class="bi bi-person-bounding-box"></i></h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">ยังไม่มีโปรเจคงานที่ถูกสร้าง :(</p>
     </div>
   </div>
 </template>
