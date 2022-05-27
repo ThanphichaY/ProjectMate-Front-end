@@ -28,7 +28,7 @@ export default {
   validations() {
     return {
       project_form: {
-        image: {},
+        image: { required },
         title: { required },
         description: { required },
         qualification: { required },

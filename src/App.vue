@@ -55,6 +55,26 @@ export default {
       const newColleague = { id, ...colleague };
       this.colleagues.push(newColleague);
     },
+    deleteProject(id) {
+      this.projects = this.projects.filter((project) => project.id !== id);
+    },
+    deleteColleague(id) {
+      this.colleagues = this.colleagues.filter(
+        (colleague) => colleague.id !== id
+      );
+    },
+    editProject(edit_project) {
+      const objIndex = this.projects.findIndex(
+        (project) => project.id == edit_project.id
+      );
+      this.projects[objIndex] = edit_project;
+    },
+    editColleague(edit_colleague) {
+      const objIndex = this.colleagues.findIndex(
+        (colleague) => colleague.id == edit_colleague.id
+      );
+      this.colleagues[objIndex] = edit_colleague;
+    },
   },
   mounted() {
     this.generateFakeProjects();
@@ -71,6 +91,10 @@ export default {
       :colleagues="colleagues"
       :onAddProject="addProject"
       :onAddColleague="addColleague"
+      :onDeleteProject="deleteProject"
+      :onDeleteColleague="deleteColleague"
+      :onEditProject="editProject"
+      :onEditColleague="editColleague"
     />
     <Footer />
   </div>

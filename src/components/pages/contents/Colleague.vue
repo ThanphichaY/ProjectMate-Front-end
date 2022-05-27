@@ -1,11 +1,11 @@
 <script>
-import ViewColleagueModal from "../modals/ViewColleagueModal.vue";
+import ViewColleagueModal from "./modals/ViewColleagueModal.vue";
 
 export default {
   components: {
     ViewColleagueModal,
   },
-  props: ["colleague"],
+  props: ["colleague", "onDeleteColleague", "onEditColleague"],
 };
 </script>
 
@@ -36,7 +36,11 @@ export default {
   </div>
 
   <div class="modal fade" :id="'colleagueModal' + colleague.id" tabindex="-1">
-    <ViewColleagueModal :colleague="colleague" />
+    <ViewColleagueModal
+      :colleague="colleague"
+      :onDeleteColleague="onDeleteColleague"
+      :onEditColleague="onEditColleague"
+    />
   </div>
 </template>
 
