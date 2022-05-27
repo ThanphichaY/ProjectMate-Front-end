@@ -148,35 +148,39 @@ export default {
                   <UploadcareWidget
                     v-if="edit_mode"
                     :buttonText="uploadResumeButtonText"
-                    :buttonClass="uploadResumeButtonClass + ' w-100 m-2'"
+                    :buttonClass="uploadResumeButtonClass + ' w-100'"
                     publicKey="c216308c562da69b96a9"
                     @input="uploadedColleagueImageFile"
                   />
-                  <button
+                  <a
                     v-else
-                    type="button"
-                    class="btn btn-secondary w-100 m-2"
+                    :href="colleague.resume"
+                    target="_blank"
+                    role="button"
+                    class="btn btn-secondary w-100"
                   >
                     <i class="bi bi-cloud-download me-1"></i>
                     Resume
-                  </button>
+                  </a>
                 </div>
                 <div v-if="colleague.portfolio" class="col">
                   <UploadcareWidget
                     v-if="edit_mode"
                     :buttonText="uploadPortfolioButtonText"
-                    :buttonClass="uploadPortfolioButtonClass + ' w-100 m-2'"
+                    :buttonClass="uploadPortfolioButtonClass + ' w-100'"
                     publicKey="c216308c562da69b96a9"
                     @input="uploadedColleaguePortfolioFile"
                   />
-                  <button
+                  <a
                     v-else
-                    type="button"
-                    class="btn btn-secondary w-100 m-2"
+                    :href="colleague.portfolio"
+                    target="_blank"
+                    role="button"
+                    class="btn btn-secondary w-100"
                   >
                     <i class="bi bi-cloud-download me-1"></i>
                     Portfolio
-                  </button>
+                  </a>
                 </div>
               </div>
 
