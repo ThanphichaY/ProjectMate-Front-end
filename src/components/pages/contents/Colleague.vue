@@ -30,7 +30,7 @@ export default {
         data-bs-toggle="modal"
         :data-bs-target="'#colleagueModal' + colleague.id"
       >
-        ดูเพิ่่มเติม
+        ดูเพิ่มเติม
       </button>
     </div>
   </div>

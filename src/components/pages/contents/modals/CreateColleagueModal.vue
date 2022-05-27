@@ -41,19 +41,19 @@ export default {
   },
   computed: {
     uploadImageButtonText() {
-      return this.colleague_form.image ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
+      return this.colleague_form.image ? "อัพโหลดสำเร็จ กดอีกรอบเพื่อเปลี่ยนไฟล์" : "อัพโหลดไฟล์";
     },
     uploadImageButtonClass() {
       return this.colleague_form.image ? "btn-success" : "btn-danger";
     },
     uploadResumeButtonText() {
-      return this.colleague_form.resume ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
+      return this.colleague_form.resume ? "อัพโหลดสำเร็จ กดอีกรอบเพื่อเปลี่ยนไฟล์" : "อัพโหลดไฟล์";
     },
     uploadResumeButtonClass() {
       return this.colleague_form.resume ? "btn-success" : "btn-warning";
     },
     uploadPortfolioButtonText() {
-      return this.colleague_form.portfolio ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
+      return this.colleague_form.portfolio ? "อัพโหลดสำเร็จ กดอีกรอบเพื่อเปลี่ยนไฟล์" : "อัพโหลดไฟล์";
     },
     uploadPortfolioButtonClass() {
       return this.colleague_form.portfolio ? "btn-success" : "btn-warning";

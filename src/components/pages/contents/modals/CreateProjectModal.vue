@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     uploadButtonText() {
-      return this.project_form.image ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
+      return this.project_form.image ? "อัพโหลดสำเร็จ กดอีกรอบเพื่อเปลี่ยนไฟล์" : "อัพโหลดไฟล์";
     },
     uploadButtonClass() {
       return this.project_form.image ? "btn-success" : "btn-danger";

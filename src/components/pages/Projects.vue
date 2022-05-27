@@ -86,7 +86,7 @@ export default {
   >
     <h1 class="display-1"><i class="bi bi-book"></i></h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">ยังไม่มีปรไฟลที่ถูกสร้าง :(</p>
+      <p class="lead mb-4">ยังไม่มีโปรไฟลที่ถูกสร้าง :(</p>
     </div>
   </div>
 </template>
