@@ -31,14 +31,12 @@ export default {
       },
     };
   },
-  computed: {
-    uploadButtonText() {
-      return this.project_form.image ? "อัพโหลดใหม่" : "อัพโหลดไฟล์";
-    },
-  },
   methods: {
     toggleEdit() {
       this.edit_mode = !this.edit_mode;
+      if (this.edit_mode) {
+        this.project_form = JSON.parse(JSON.stringify(this.project));
+      }
     },
     uploadedProjectFile(cdnUrl) {
       this.project_form.image = cdnUrl;
@@ -57,17 +55,7 @@ export default {
     <div class="modal-content">
       <form>
         <div class="modal-header">
-          <input
-            v-if="edit_mode"
-            type="text"
-            class="form-control"
-            :class="{ 'is-invalid': v$.project_form.title.$error }"
-            v-model="project_form.title"
-            @blur="v$.project_form.title.$touch"
-          />
-          <h5 class="modal-title" v-else>
-            {{ project.title }}
-          </h5>
+          <h5 class="modal-title">ดูรายละเอียดโปรเจคงาน</h5>
           <button
             type="button"
             class="btn-close"
@@ -81,7 +69,7 @@ export default {
               <div class="col-lg-6 align-self-center">
                 <UploadcareWidget
                   v-if="edit_mode"
-                  :buttonText="uploadButtonText"
+                  buttonText="อัพโหลดใหม่"
                   buttonClass="btn-warning"
                   publicKey="c216308c562da69b96a9"
                   @input="uploadedProjectFile"
@@ -95,6 +83,18 @@ export default {
               </div>
 
               <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="col-form-label">ชื่องาน:</label>
+                  <input
+                    v-if="edit_mode"
+                    type="text"
+                    class="form-control"
+                    :class="{ 'is-invalid': v$.project_form.title.$error }"
+                    v-model="project_form.title"
+                    @blur="v$.project_form.title.$touch"
+                  />
+                  <p v-else>{{ project.title }}</p>
+                </div>
                 <div class="mb-3">
                   <label class="col-form-label">รายละเอียดงาน:</label>
                   <textarea

@@ -31,6 +31,9 @@ export default {
     onEditProject: {
       type: Function,
     },
+    onEditColleague: {
+      type: Function,
+    },
   },
 };
 </script>
@@ -58,6 +61,7 @@ export default {
         v-for="colleague in colleagues"
         :colleague="colleague"
         :onDeleteColleague="onDeleteColleague"
+        :onEditColleague="onEditColleague"
       />
     </div>
   </div>
@@ -67,6 +71,7 @@ export default {
         <Colleague
           :colleague="colleague"
           :onDeleteColleague="onDeleteColleague"
+          :onEditColleague="onEditColleague"
         />
       </div>
     </div>

@@ -31,6 +31,9 @@ export default {
     onEditProject: {
       type: Function,
     },
+    onEditColleague: {
+      type: Function,
+    },
   },
 };
 </script>
