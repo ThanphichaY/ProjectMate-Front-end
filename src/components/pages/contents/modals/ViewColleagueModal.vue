@@ -203,7 +203,7 @@ export default {
       </div>
 
       <div class="modal-footer">
-        <div class="mb-3 text-end">
+        <div class="text-end">
           <i
             v-if="edit_mode"
             class="bi bi-save h4 text-success mx-2"
