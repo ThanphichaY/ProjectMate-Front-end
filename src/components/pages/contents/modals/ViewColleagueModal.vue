@@ -62,7 +62,7 @@ export default {
       this.colleague_form.portfolio = cdnUrl;
     },
     submitEditColleagueForm() {
-      this.onEditColleague(this.colleague_form);
+      this.onEditColleague({ ...this.colleague_form, id: this.colleague.id });
       this.v$.$reset();
       this.toggleEdit();
     },
