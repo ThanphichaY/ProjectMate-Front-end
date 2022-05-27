@@ -5,12 +5,12 @@ export default {
   components: {
     ViewProjectModal,
   },
-  props: ["project", "onDeleteProject", "onEditProject"],
+  props: ["project", "onDeleteProject", "onEditProject", "slide"],
 };
 </script>
 
 <template>
-  <div class="card mx-2">
+  <div class="card mx-2" :style="slide ? 'max-width: 250px' : ''">
     <img
       :src="project.image"
       class="card-img-top"
@@ -48,7 +48,6 @@ export default {
 .card {
   height: 400px;
   min-width: 250px;
-  max-width: 250px;
 }
 
 .card-img-top {

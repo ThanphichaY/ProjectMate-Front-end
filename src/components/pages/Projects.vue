@@ -61,6 +61,7 @@ export default {
         :project="project"
         :onDeleteProject="onDeleteProject"
         :onEditProject="onEditProject"
+        :slide="slide"
       />
     </div>
   </div>
@@ -72,6 +73,7 @@ export default {
           :project="project"
           :onDeleteProject="onDeleteProject"
           :onEditProject="onEditProject"
+          :slide="slide"
         />
       </div>
     </div>
