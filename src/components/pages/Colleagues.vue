@@ -53,7 +53,7 @@ export default {
 
   <div v-if="slide" class="container-fluid px-0 mb-4">
     <div
-      class="d-flex flex-row flex-nowrap overflow-scroll px-md-5 pb-3"
+      class="d-flex flex-row flex-nowrap px-md-5 pb-3"
       v-dragscroll
       style="cursor: grab"
     >
