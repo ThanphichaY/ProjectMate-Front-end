@@ -148,32 +148,19 @@ export default {
                   />
                   <p v-else>{{ project.company }}</p>
                 </div>
-                <div class="mb-3 text-end">
-                  <i
+                <div class="mb-3">
+                  <label class="col-form-label">ติดต่อ:</label>
+                  <input
                     v-if="edit_mode"
-                    class="bi bi-save h4 text-success mx-2"
+                    type="text"
+                    class="form-control"
                     :class="{
-                      'text-success': !v$.$invalid,
-                      'text-muted': v$.$invalid,
+                      'is-invalid': v$.project_form.project_contact.$error,
                     }"
-                    style="cursor: pointer"
-                    @click.prevent="submitEditProjectForm"
-                  ></i>
-                  <i
-                    class="bi h4 text-warning mx-2"
-                    :class="{
-                      'bi-pencil-square': !edit_mode,
-                      'bi-x-square': edit_mode,
-                    }"
-                    style="cursor: pointer"
-                    @click="toggleEdit"
-                  ></i>
-                  <i
-                    class="bi bi-trash h4 text-danger mx-2"
-                    style="cursor: pointer"
-                    @click="onDeleteProject(project.id)"
-                    data-bs-dismiss="modal"
-                  ></i>
+                    v-model="project_form.project_contact"
+                    @blur="v$.project_form.project_contact.$touch"
+                  />
+                  <p v-else>{{ project.project_contact }}</p>
                 </div>
               </div>
             </div>
@@ -181,9 +168,33 @@ export default {
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary w-100 m-2">
-            ติดต่อ
-          </button>
+          <div class="text-end">
+            <i
+              v-if="edit_mode"
+              class="bi bi-save h4 text-success mx-2"
+              :class="{
+                'text-success': !v$.$invalid,
+                'text-muted': v$.$invalid,
+              }"
+              style="cursor: pointer"
+              @click.prevent="submitEditProjectForm"
+            ></i>
+            <i
+              class="bi h4 text-warning mx-2"
+              :class="{
+                'bi-pencil-square': !edit_mode,
+                'bi-x-square': edit_mode,
+              }"
+              style="cursor: pointer"
+              @click="toggleEdit"
+            ></i>
+            <i
+              class="bi bi-trash h4 text-danger mx-2"
+              style="cursor: pointer"
+              @click="onDeleteProject(project.id)"
+              data-bs-dismiss="modal"
+            ></i>
+          </div>
         </div>
       </form>
     </div>

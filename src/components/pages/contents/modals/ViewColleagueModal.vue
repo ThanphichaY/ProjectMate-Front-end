@@ -142,6 +142,20 @@ export default {
                 />
                 <p v-else>{{ colleague.int_pos }}</p>
               </div>
+              <div class="mb-3">
+                <label class="col-form-label">ติดต่อ:</label>
+                <input
+                  v-if="edit_mode"
+                  type="text"
+                  class="form-control"
+                  :class="{
+                    'is-invalid': v$.colleague_form.colleague_contact.$error,
+                  }"
+                  v-model="colleague_form.colleague_contact"
+                  @blur="v$.colleague_form.colleague_contact.$touch"
+                />
+                <p v-else>{{ colleague.colleague_contact }}</p>
+              </div>
 
               <div class="row mb-3">
                 <div v-if="colleague.resume" class="col">
@@ -183,44 +197,39 @@ export default {
                   </a>
                 </div>
               </div>
-
-              <div class="mb-3 text-end">
-                <i
-                  v-if="edit_mode"
-                  class="bi bi-save h4 text-success mx-2"
-                  :class="{
-                    'text-success': !v$.$invalid,
-                    'text-muted': v$.$invalid,
-                  }"
-                  style="cursor: pointer"
-                  @click.prevent="submitEditColleagueForm"
-                ></i>
-                <i
-                  class="bi h4 text-warning mx-2"
-                  :class="{
-                    'bi-pencil-square': !edit_mode,
-                    'bi-x-square': edit_mode,
-                  }"
-                  style="cursor: pointer"
-                  @click="toggleEdit"
-                ></i>
-                <i
-                  class="bi bi-trash h4 text-danger mx-2"
-                  style="cursor: pointer"
-                  @click="onDeleteColleague(colleague.id)"
-                  data-bs-dismiss="modal"
-                ></i>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary w-100 m-2">
-          <i class="bi bi-envelope me-1"></i>
-          ติดต่อ
-        </button>
+        <div class="mb-3 text-end">
+          <i
+            v-if="edit_mode"
+            class="bi bi-save h4 text-success mx-2"
+            :class="{
+              'text-success': !v$.$invalid,
+              'text-muted': v$.$invalid,
+            }"
+            style="cursor: pointer"
+            @click.prevent="submitEditColleagueForm"
+          ></i>
+          <i
+            class="bi h4 text-warning mx-2"
+            :class="{
+              'bi-pencil-square': !edit_mode,
+              'bi-x-square': edit_mode,
+            }"
+            style="cursor: pointer"
+            @click="toggleEdit"
+          ></i>
+          <i
+            class="bi bi-trash h4 text-danger mx-2"
+            style="cursor: pointer"
+            @click="onDeleteColleague(colleague.id)"
+            data-bs-dismiss="modal"
+          ></i>
+        </div>
       </div>
     </div>
   </div>
