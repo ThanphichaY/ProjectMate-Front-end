@@ -48,6 +48,7 @@ export default {
 .card {
   height: 400px;
   min-width: 250px;
+  max-width: 250px;
 }
 
 .card-img-top {
